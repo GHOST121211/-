@@ -1,0 +1,170 @@
+
+/* معرض الصور */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px auto;
+    padding: 0 20px;
+    max-width: 1200px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+
+/* إعدادات عامة */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #ff006e, #ffbe0b, #3a86ff);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 6s infinite linear;
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* تأثيرات الروابط */
+.navbar ul li a:hover {
+    color: #ffbe0b;
+    transform: scale(1.1);
+}
+
+.navbar ul li a:active {
+    color: #fff;
+    transform: scale(0.9);
+}
+
+/* الأقسام */
+.section {
+    display: none;
+    padding: 100px 20px;
+    min-height: 100vh;
+}
+
+.section.active {
+    display: block;
+}
+
+/* أزرار الإجراءات */
+.action-button,
+.contact-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff);
+    background-size: 200% 200%;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: buttonAnimation 3s infinite alternate;
+}
+
+.action-button:hover,
+.contact-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 0, 110, 0.5);
+}
+
+.action-button:active,
+.contact-button:active {
+    transform: scale(0.9);
+    background-color: #e85c4f;
+}
+
+.contact-button {
+    display: inline-block;
+    margin: 10px;
+}
+
+/* رسالة الترحيب */
+.welcome {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    opacity: 1;
+    color: #fff;
+    z-index: 1000;
+    animation: fadeOut 3s forwards;
+}
+
+/* تأثير الخلفية */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* تأثير الأزرار */
+@keyframes buttonAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
