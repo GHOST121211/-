@@ -1,61 +1,102 @@
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHOST</title>
+    <title>218 SHOP</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="welcome-message" class="welcome">مرحباً بك في موقعي!</div>
+    <div id="welcome-message" class="welcome">ارجو انت تعجبك خدماتنا</div>
 
     <header class="header">
         <nav class="navbar">
             <ul>
                 <li><a href="#home" onclick="showSection('home')">الرئيسية</a></li>
+                <li><a href="#services" onclick="showSection('services')">الخدمات</a></li>
+                <li><a href="#about" onclick="showSection('about')">عن الموقع</a></li>
                 <li><a href="#contact" onclick="showSection('contact')">تواصل معنا</a></li>
             </ul>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="ابحث هنا...">
+                <button id="search-button">بحث</button>
+            </div>
         </nav>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
     </header>
 
     <main>
-        <!-- قسم الرئيسية -->
         <section id="home" class="section active">
-            <h1>مرحباً بك في موقعي الشخصي</h1>
-            <p> هنا استعرض تصاميمي ومشاريعي  المميزة !</p>
-            
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="تصميم1.jpg" alt="تصميم 1">
-        </div>
-        <div class="gallery-item">
-            <img src="تصميم2.jpg" alt="تصميم 2">
-        </div>
-        <div class="gallery-item">
-            <img src="تصميم3.jpg" alt="تصميم 3">
-        </div>
-        <div class="gallery-item">
-            <img src="تصميم4.jpg" alt="تصميم 4">
-        </div>
-          <div class="gallery-item">
-    <img src="تصميم5.jpg" alt="تصميم 5">
-  </div>
-    </div>
-</section>
-            
-            
-            
-            
+            <h1>مرحباً بك في متجر 218</h1>
+            <h2>هنا نستعرض تصاميم ومشاريعنا المميزة!</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="تصميم1.jpg" alt="تصميم 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="تصميم2.jpg" alt="تصميم 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="تصميم3.jpg" alt="تصميم 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="تصميم4.jpg" alt="تصميم 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="تصميم5.jpg" alt="تصميم 5">
+                </div>
+            </div>
         </section>
 
-        <!-- قسم التواصل -->
+        <section id="services" class="section">
+            <h2>خدماتنا</h2>
+            <p>نقدم مجموعة متنوعة من الخدمات لتلبية احتياجاتك:</p>
+            <ul>
+                <li>تصميم مواقع الويب</li>
+                <li>تطوير تطبيقات الهاتف المحمول</li>
+                <li>تصميم الجرافيك</li>
+                <li>استشارات تقنية</li>
+            </ul>
+            <div class="service-details">
+                <h3>تصميم مواقع الويب</h3>
+                <p>نقوم بتصميم مواقع ويب احترافية تلبي احتياجات عملك وتساعدك على الوصول إلى جمهورك المستهدف.</p>
+                <h3>تطوير تطبيقات الهاتف المحمول</h3>
+                <p>نطور تطبيقات هاتف محمول عالية الجودة تعمل على جميع الأنظمة الأساسية وتوفر تجربة مستخدم ممتازة.</p>
+                <h3>تصميم الجرافيك</h3>
+                <p>نقدم خدمات تصميم الجرافيك التي تشمل الشعارات، البروشورات، والمواد التسويقية الأخرى.</p>
+                <h3>استشارات تقنية</h3>
+                <p>نوفر استشارات تقنية لمساعدتك في اتخاذ القرارات الصحيحة بشأن التكنولوجيا لمشروعك.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>عن الموقع</h2>
+            <p>هذا الموقع هو منصة لعرض أعمالي ومشاريعي في مجال التصميم والتطوير.</p>
+            <p>أهدف إلى تقديم أفضل الخدمات لعملائي وتحقيق رضاهم.</p>
+            <div class="about-details">
+                <h3>رؤيتنا</h3>
+                <p>نسعى لأن نكون الشركة الرائدة في مجال التصميم والتطوير من خلال تقديم حلول مبتكرة وعالية الجودة.</p>
+                <h3>قيمنا</h3>
+                <p>نلتزم بالنزاهة، الجودة، والابتكار في جميع أعمالنا.</p>
+                <h3>فريقنا</h3>
+                <p>يتكون فريقنا من مجموعة من المحترفين ذوي الخبرة في مجالات التصميم والتطوير المختلفة.</p>
+            </div>
+        </section>
+
         <section id="contact" class="section">
-            <h2>للتواصل معناوطلب تصميم</h2>
+            <h2>للتواصل معنا وطلب تصميم</h2>
+            <p>يمكنك التواصل معنا عبر الروابط التالية:</p>
             <div class="contact-links">
                 <a href="https://www.instagram.com/gh_.os" target="_blank" class="contact-button">إنستغرام</a>
                 <a href="https://wa.me/911192917" target="_blank" class="contact-button">واتساب</a>
             </div>
+            
         </section>
+
+        <button id="back-to-top" title="العودة إلى الأعلى">↑</button>
     </main>
 
     <footer>
@@ -65,4 +106,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
