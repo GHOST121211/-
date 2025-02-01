@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LY | 218 Store</title>
+    <link rel="icon" href="logo 218.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- شريط التحميل المتحرك -->
+    <div class="loading-bar"></div>
+
+    <!-- الهيدر -->
+    <header class="glass-header">
+        <!-- اللوجو -->
+        <img src="218.png" alt="Logo" class="logo-img">
+        <h1 class="logo">STORE <span>218</span></h1>
+        <nav>
+            <button class="nav-btn" onclick="showSection('home')"><i class="fas fa-home"></i></button>
+            <button class="nav-btn" onclick="showSection('products')"><i class="fas fa-shopping-bag"></i></button>
+            <button class="nav-btn" onclick="showSection('cart')"><i class="fas fa-shopping-cart"></i></button>
+            <button class="nav-btn" onclick="showSection('admin')"><i class="fas fa-user-shield"></i></button>
+        </nav>
+    </header>
+
+    <!-- الأقسام الرئيسية -->
+    <main>
+        <!-- الصفحة الرئيسية -->
+        <section id="home" class="active">
+            <div class="hero">
+                <h2 class="animate-text">مرحبا بكم في متجر 218</h2>
+                <p class="subtitle">أحدث المنتجات بأفضل الأسعار</p>
+            </div>
+        </section>
+
+        <!-- قسم المنتجات -->
+        <section id="products">
+            <div class="products-grid"></div>
+        </section>
+
+        <!-- سلة التسوق -->
+        <section id="cart">
+            <div class="cart-header">
+                <h2><i class="fas fa-shopping-basket"></i> سلة التسوق</h2>
+                <p class="total-price">المجموع: <span>0</span> دينار</p>
+            </div>
+            <div class="cart-items"></div>
+            <button class="checkout-btn" onclick="checkout()">
+                <i class="fas fa-credit-card"></i> إتمام الشراء
+            </button>
+        </section>
+
+        <!-- لوحة التحكم -->
+        <section id="admin">
+            <div class="admin-panel glass-effect">
+                <div class="auth-box">
+                    <input type="password" id="admin-pass" placeholder="كلمة المرور" class="admin-input">
+                    <button class="admin-login-btn" onclick="loginAdmin()">
+                        <i class="fas fa-sign-in-alt"></i> دخول المدير
+                    </button>
+                </div>
+                <div class="admin-content" style="display:none;">
+                    <h2><i class="fas fa-tools"></i> لوحة التحكم</h2>
+                    <div class="add-product-form">
+                        <div class="form-group">
+                            <i class="fas fa-tag"></i>
+                            <input type="text" id="product-name" placeholder="اسم المنتج" class="admin-input">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-coins"></i>
+                            <input type="number" id="product-price" placeholder="السعر" class="admin-input">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-image"></i>
+                            <input type="text" id="product-img" placeholder="رابط الصورة" class="admin-input">
+                        </div>
+                        <button class="add-product-btn" onclick="addProduct()">
+                            <i class="fas fa-plus-circle"></i> إضافة منتج
+                        </button>
+                    </div>
+                    <div class="admin-products-grid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الإشعارات -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* التنسيقات العامة */
+:root {
+    --primary-color: #2d00f7;
+    --secondary-color: #000000;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* الهيدر */
+.glass-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-img {
+    width: 100px; /* يمكنك تعديل حجم اللوجو حسب الحاجة */
+    height: auto;
+    position: absolute;
+    top: 1px;
+    right: 150px;
+}
+
+.logo {
+    font-size: 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.nav-btn:hover {
+    background: var(--glass-bg);
+    transform: translateY(-3px);
+}
+
+/* الأقسام */
+section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* المنتجات */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.product-card {
+    background: var(--glass-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* سلة التسوق */
+.cart-header {
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price span {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+}
+
+.cart-items {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-item {
+    background: var(--glass-bg);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.checkout-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    transition: all 0.3s;
+}
+
+.checkout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* لوحة التحكم */
+.admin-panel {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.admin-input {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+
+.add-product-btn {
+    background: var(--secondary-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.add-product-btn:hover {
+    background: #3aa89b;
+}
+
+.admin-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* الإشعارات */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: none;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
